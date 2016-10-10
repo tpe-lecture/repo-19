@@ -85,8 +85,11 @@ public class ComplexNumberTest {
         // Durchzuführende Tests:
         // (3   +  5i) --conj--> (3   + -5i)
         // (-2  + -4i) --conj--> (-2  + 4i)
+        ComplexNumber a = new ComplexNumber(3, 5);
+        ComplexNumber b = new ComplexNumber(-2, -4);
 
-        // TODO: Test schreiben
+        assertEquals(new ComplexNumber(3, -5), a.conjugate());
+        assertEquals(new ComplexNumber(-2, 4), b.conjugate());
     }
 
     /**
@@ -97,8 +100,10 @@ public class ComplexNumberTest {
         // Durchzuführende Tests:
         // |(3 + -4i)| = 5
         // |(0 +  3i)| = 3
+        ComplexNumber a = new ComplexNumber(3, -4);
+        ComplexNumber b = new ComplexNumber(0, 3);
 
-        // TODO: Test schreiben
+        // betrag(z) = sqrt(z* z(konjugiert))
     }
 
     /**
