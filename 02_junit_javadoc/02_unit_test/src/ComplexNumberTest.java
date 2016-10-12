@@ -103,9 +103,8 @@ public class ComplexNumberTest {
         ComplexNumber a = new ComplexNumber(3, -4);
         ComplexNumber b = new ComplexNumber(0, 3);
 
-        //assertEquals(5.0, a.abs());
-        //equals(3, b.abs());
-        // betrag(z) = sqrt(z* z(konjugiert))
+        assertEquals(5, a.abs(), 0);
+        assertEquals(3, b.abs(), 0);
     }
 
     /**
@@ -119,12 +118,11 @@ public class ComplexNumberTest {
         // (2 + -4i)^3 = (2 + -4i)*(2 + -4i)*(2 + -4i)
         // (2 + -4i)^6 = (7488 + -2816i)
         ComplexNumber a = new ComplexNumber(2, -4);
-        
+
         assertEquals(a, a.power(1));
         assertEquals(a.multiply(a), a.power(2));
         assertEquals(a.multiply(a).multiply(a), a.power(3));
         assertEquals(new ComplexNumber(7488, -2816), a.power(6));
-        // TODO: Test schreiben
     }
 }
 
