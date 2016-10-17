@@ -1,20 +1,36 @@
-// TODO: JavaDoc
+/**
+ *
+ * Erlaubt das Erstellen einer Währung in Form eines Objektes.
+ * Diese Währung erhält durch ihren Konstruktor einen Kurs, Namen und ein
+ * Kürzel.
+ *
+ * @author m.praeg
+ *
+ */
 public class Waehrung {
 
-    // TODO: JavaDoc
+    /**
+     * Währungskurs.
+     */
     private final int kurs;
 
-    // TODO: JavaDoc
+    /**
+     * Name der Währung.
+     */
     private final String name;
 
-    // TODO: JavaDoc
+    /**
+     *  Abgekürzte Währungsform.
+     */
     private final String kuerzel;
 
-    // TODO: JavaDoc
+    /**
+     * Global existenter Teiler für alle Währungen.
+     */
     private static final long TEILER = 10000;
 
     /**
-     * Erzeugt ein neues Objekt.
+     * Erzeugt ein neues Objekt der Klasse Währung.
      *
      * @param name Name der Währung (z.B. EURO).
      * @param kuerzel Kürzel der Währung (z.B. €).
@@ -26,22 +42,35 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Wandelt Betrag einer Währung in den Betrag einer anderen Währung um
+     * (z.B. € zu $).
+     *
+     * @param betrag Umzurechnender betrag
+     * @param toWaehrung Zielwährung
+     * @return Gibt den Betrag in Zielwährung um
+     */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
 
-    // TODO: JavaDoc
+    /**
+     * @return Kurs der Währung
+     */
     public int getKurs() {
         return kurs;
     }
-    
-    // TODO: JavaDoc
+
+    /**
+     * @return Name der Waehrung
+     */
     public String getName() {
         return name;
     }
 
-    // TODO: JavaDoc
+    /**
+     * @return Kuerzel der Waehrung
+     */
     public String getKuerzel() {
         return kuerzel;
     }
@@ -51,8 +80,7 @@ public class Waehrung {
      */
     @Override
     public String toString() {
-        return String.format("%s [%s] 1 %s = %.4f %s",
-                name, kuerzel, "$",
+        return String.format("%s [%s] 1 %s = %.4f %s", name, kuerzel, "$",
                 kurs / (double) TEILER, kuerzel);
     }
 
@@ -63,11 +91,9 @@ public class Waehrung {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result
-                + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + kurs;
-        result = prime * result
-                + ((kuerzel == null) ? 0 : kuerzel.hashCode());
+        result = prime * result + ((kuerzel == null) ? 0 : kuerzel.hashCode());
         return result;
     }
 
