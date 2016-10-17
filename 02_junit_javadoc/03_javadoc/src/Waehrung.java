@@ -48,7 +48,7 @@ public class Waehrung {
      *
      * @param betrag Umzurechnender betrag
      * @param toWaehrung Zielwährung
-     * @return Gibt den Betrag in Zielwährung um
+     * @return Betrag in Zielwährung
      */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
